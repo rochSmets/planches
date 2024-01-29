@@ -1,0 +1,74 @@
+\begin{tikzpicture}[scale=0.5]
+
+\def\dx{0.3} % diameter of the arrow
+\def\l{2.8}  % mean distance between the wires
+\def\arrlen{0.9}
+\def\arrlenmin{0.7}
+\def\arrlenmax{1.1}
+\def\dl{0.8} % offset of the unaligned wire
+
+\def\la{-9.0} % left start point of straight field line
+\def\lb{-0.0} % left end point of straight field line
+\def\yl{1.6} % y offset of the field line relative to 0
+\def\conta{1.0} % control for outer tip of field line
+\def\contb{1.0} % control for iner tip of field line
+\def\lc{+2.0} % left end point of straight field line
+\def\ld{+4.0} % left end point of straight field line
+\def\dyl{0.6} % y location of the pinched field line
+
+
+\tikzset{arrowplus/.pic = {\draw[very thick] (0, 0) circle (3pt);
+                           \draw[very thick] (0, 0) circle (0.5pt); }
+        }
+
+\tikzset{arrowminus/.pic = {\draw[very thick] (0, 0) circle (3pt);
+                            \draw[very thick] ( 0.0,-0.1) -- ( 0.0,+0.1);
+                            \draw[very thick] (-0.1, 0.0) -- (+0.1, 0.0);}
+        }
+
+
+\tikzset{frame/.pic = {\draw[very thick, ->] (0.0, 0.0) -- ( 0.5, 0.0);
+                       \node at ( 0.7, 0.0) {$x$};
+                       \draw[very thick, ->] (0.0, 0.0) -- ( 0.0, 0.5);
+                       \node at ( 0.0, 0.7) {$y$};
+                       \path[very thick] (0.0 ,0.0) pic{arrowplus};
+                       \node at (-0.3,-0.3) {$z$};}
+        }
+
+% wires of current
+\path[very thick, olive] (0-3*\l,0) pic{arrowplus};
+\path[very thick, olive] (0-2*\l,0) pic{arrowplus};
+\path[very thick, olive] (0-1*\l,0) pic{arrowplus};
+\path[very thick, olive] (0,0) pic{arrowplus};
+\path[very thick, purple] (0+1*\l+\dl,0) pic{arrowplus};
+\path[very thick, olive] (0+2*\l,0) pic{arrowplus};
+
+% forces on the wire
+\draw[very thick, gray,   ->] (0-\l-\dx, 0) -- (0-\l-\dx-\arrlen,0);
+\draw[very thick, gray,   ->] (0-\l+\dx, 0) -- (0-\l+\dx+\arrlen,0);
+\draw[very thick, gray,   ->] (0+\l+\dl-\dx, 0) -- (0+\l+\dl-\dx-\arrlenmin,0);
+\draw[very thick, gray,   ->] (0+\l+\dl+\dx, 0) -- (0+\l+\dl+\dx+\arrlenmax,0);
+
+% B field line
+\draw[very thick, black,  ->] (\la, -\yl) -- (\lb, -\yl);
+\draw[very thick, black,  - ] (\lb, -\yl)
+    .. controls +(+\conta, 0) and +(-\contb, 0)
+    .. (\lc, -\dyl)
+    .. controls +(+\contb, 0) and +(-\conta, 0)
+    .. (\ld, -\yl);
+
+\draw[very thick, black,  - ] (\la, +\yl) -- (\lb, +\yl);
+\draw[very thick, black,  <-] (\lb, +\yl)
+    .. controls +(+\conta, 0) and +(-\contb, 0)
+    .. (\lc, +\dyl)
+    .. controls +(+\contb, 0) and +(-\conta, 0)
+    .. (\ld, +\yl);
+
+% legend
+\node[olive] at ( 6.3, 0.0) {$J_z$};
+\node[black] at (-9.5,-1.7) {$B_x$};
+
+% axis
+\path[very thick] (-5.0,3.0) pic{frame};
+
+\end{tikzpicture}

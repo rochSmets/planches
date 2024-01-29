@@ -1,0 +1,438 @@
+\documentclass[landscape]{slides}
+
+\usepackage{animate}
+\usepackage[landscape]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{pstricks}
+\usepackage{graphicx}
+\usepackage{graphics}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{wasysym}
+\usepackage{pgf, tikz}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{math}
+\usepackage[]{fancyhdr}
+
+
+\setlength{\textwidth}{25.0cm}
+\setlength{\textheight}{20.0cm}
+\setlength{\oddsidemargin}{-1.6cm}
+\setlength{\evensidemargin}{-1.6cm}
+\setlength{\topmargin}{-3.2cm}
+
+
+\newcommand{\D}{{\mathrm d}}
+\newcommand{\e}{{\mathrm e}}
+
+\begin{document}
+
+
+
+% ____________________________________________________________________________
+\begin{slide}
+\thispagestyle{empty}
+
+\begin{center}
+{\large \textbf{Experimental mitigation of \\ fast magnetic reconnection in \\[0.4cm] multiple interacting laser-produced plasmas}}
+
+\vspace{3.0cm}
+
+{\large S. Bolanos$^1$, J. Fuchs$^1$, C. Courtois$^2$ , A. Grisolet$^2$, \underline{R. SMETS}$^3$, et al.}
+\end{center}
+
+\vspace{1.0cm}
+
+$^1$LULI, $^2$CEA, $^3$LPP...\\
+This study is submitted to PRL.
+
+\vspace{2.0cm}
+
+\begin{flushright}
+\textit{"LMJ user meeting", 8-9 june 2023}
+\end{flushright}
+
+\end{slide}
+
+
+
+% ____________________________________________________________________________
+\begin{slide}
+{\large \textbf{Magnetic reconnection in solar arches}}
+
+3D (revised) \underline{standard model} [\textit{Holman} 2016, JGR] : \\[0.4cm]
+$\bullet$ Magnetic field lines emerge in cold "sun" spots
+
+\begin{center}
+\includegraphics[width=0.9\textwidth]{standard_model.jpg}
+\end{center}
+
+$\to$ asymmetric \& unparallel ribbons (feet of $B$-lines) \\
+$\to$ involve an inhomogeneous shear of the loops \\
+$\to$ reconnection propagate along the arcade \\
+
+$\Rightarrow$ Can this 3D phenomenon be reduced to a simpler 2D problem ?
+What is the origin of the dissipation ?
+How fast it goes ?
+
+\end{slide}
+
+
+
+% ____________________________________________________________________________
+\begin{slide}
+{\large \textbf{Magnetic reconnection in 2D}}
+
+\begin{center}
+\input{_reconnexion_2d}
+\end{center}
+
+$\bullet$ Ohm's law : $\mathbf E = - \mathbf V \times \mathbf B - \frac{1}{en} [\mathbf j \times \mathbf B - \boldsymbol{\nabla} . \; \mathbf p_e] + \eta \mathbf j - \eta^{\prime} \Delta \mathbf j + m_e \D _t \mathbf j$ \\[0.4cm]
+$\bullet$ Efficiency  of reconnection measured by $E^{\prime} = E/B_0 v_A$ \\[0.4cm]
+$\to$ Dissipation $\equiv$ plasma resistivity : "slow reconnection" $E^{\prime} \le 0.01$\\
+$\to$ Dissipation $\equiv$ $e^-$ agyrotropy : "fast reconnection" $E^{\prime} \sim 0.1$ \\
+
+\end{slide}
+
+
+
+% ____________________________________________________________________________
+\begin{slide}
+{\large \textbf{Magnetized plasma loop using a ns-laser}}
+
+$\bullet$ Plasma produced by a ns-laser on a solid target \\
+$\bullet$ $B$-field produced by Biermann-battery effect
+
+\begin{center}
+\input{_hot_spot}
+\end{center}
+
+$\Rightarrow$ The B-field produced on \underline{front face} is clock-wise oriented :
+$$
+\partial_t \mathbf B = - \frac{1}{en_e} \boldsymbol{\nabla} n_e \times \boldsymbol{\nabla} T_e
+$$
+
+\end{slide}
+
+
+
+% ____________________________________________________________________________
+\begin{slide}
+{\large \textbf{Diagnostics}}
+
+$\bullet$ Proton radiography using PETAL on a solid target \\
+$\to$ a proton beam is created with ps-laser on solid target by TNSA \\
+$\to$ collected on a stack of Radio-Chromic-Films (resolved in energy) \\
+$\to$ the proton dose give insights on the path-integrated $B$-field \\
+
+$\bullet$ DMX \\
+$\to$ integrated spectra (arbitrary units) for depending on time \\
+
+$\bullet$ DP1 \& DP4 \\
+$\to$ provides an image of the focal spot \\
+
+\end{slide}
+
+
+
+% ____________________________________________________________________________
+\begin{slide}
+{\large \textbf{Lasers configurations (first shot)}}
+
+\begin{center}
+\includegraphics[width=0.9\textwidth]{tir1.png}
+\end{center}
+
+\end{slide}
+
+
+
+% ____________________________________________________________________________
+\begin{slide}
+{\large \textbf{Lasers parameters}}
+
+\bigskip
+
+\begin{center}
+\begin{tabular}{lll}
+\hline
+\hline
+\hspace{8.0cm} & LMJ\hspace{4.0cm}  & PETAL\hspace{2.0cm}  \\
+\hline
+Pulse duration             & 5 ns                    & 0.7 ps \\
+Energy                     & 12 kJ                   & 400 J \\
+Solid target               & \texttt{Au} - 5 $\mu$m  & \texttt{Au} - 25 $\mu$m \\
+Wave length                & 351 nm                  & 1053 nm \\
+\hline
+\hline
+\end{tabular}
+\end{center}
+
+\bigskip
+
+$\to$ we used 6 quads : C28, C29, C10, both H \& B \\
+$\to$ laser incidence depends on the quad and energy is then modulated  \\
+$\to$ energy depends on the angle... for somewhat similar plasma loops \\
+$\to$ proton probe incidence of 34$^o$ \\
+$\to$ hot spots separation : 7.5 mm \& 1.5 mm for reconnection \\
+%$\to$  \\
+$\to$ a total of 7 shots (1 on \texttt{Ti}-foil) \\
+$\to$ 3 times for 2-loops and 3-loops reconnection : 2.1, 3.2 \& 4.3 ns \\
+
+\end{slide}
+
+
+
+% ____________________________________________________________________________
+\begin{slide}
+{\large \textbf{Plasmas parameters}}
+
+$\bullet$ From \texttt{fci2} simulation for the plasma plume :
+
+\begin{center}
+\begin{tabular}{lll}
+\hline
+\hline
+& Plasma plume & Proton beam \hspace{2.0cm}\\
+\hline
+Magnetic field             & $\sim$ 600 nT                              & \\
+Electron density           & $\sim$ 4 $\times$ 10$^{27}$ m$^{-3}$       & \\
+Mean flow                  & $\sim 2 \times 10^5$ m.s$^{-1}$            & $\sim c$ ??? \\
+Kinetic energy             & $\sim$ 100 eV                              & $\sim$ 42 MeV \\
+$\beta$ parameter          & $\beta_e = 0.5$, $\beta_i = 0.02$          & \\
+Loop radii                 & $\sim$ 300 $\to$ 900 $\mu$m                & \\
+Ion Inertial length        & $\sim$ 4 $\mu$m                            & \\
+Ion Gyroperiod             & $\sim$ 17 ps                               & \\
+Alfvén velocity            & $\sim 2 \times 10^5$ m.s$^{-1}$            & \\
+\hline
+\hline
+\end{tabular}
+\end{center}
+
+$\to$ close to the $\beta \sim 1$ regime \\
+$\to$ magnetization parameter $\sigma \ll 1$ \\
+
+\end{slide}
+
+
+
+% ____________________________________________________________________________
+\begin{slide}
+{\large \textbf{Reconnection between 2 magnetized plasma loops}}
+
+\begin{center}
+\input{_2_spots}
+\end{center}
+
+$\to$ the current sheet is building up with the irradiation \\
+$\to$ Lundqvist number $S \sim 10^3$ (Spitzer-Harm) : somewhat collisionless \\
+$\to$ aspect ratio of the current sheet $<$ 50 \\
+$\to$ curvature of the B-field in favour of single X-type reconnection \\
+$\to$ we consider the problem with a 2D (numerical) approach \\
+%$\to$  \\
+
+\end{slide}
+
+
+
+% ____________________________________________________________________________
+\begin{slide}
+{\large \textbf{Reconnection between 3 magnetized plasma loops}}
+
+\begin{center}
+\input{_3_spots}
+\end{center}
+
+$\to$ the plasma outflow is "trapped" in closed structures \\
+
+\end{slide}
+
+
+
+% ____________________________________________________________________________
+\begin{slide}
+{\large \textbf{Comparison between 2-plumes \& 3-plumes}}
+
+\begin{center}
+\includegraphics[width=0.8\textwidth]{rcf_lmj.png}
+\end{center}
+
+$\to$ reconnection rate $E^{\prime}$ larger for 2-plumes\\
+
+\end{slide}
+
+
+
+% ____________________________________________________________________________
+\begin{slide}
+{\large \textbf{Path-integrated for B-field (3-plumes)}}
+
+\begin{center}
+\includegraphics[width=0.8\textwidth]{B_integrated.png}
+\end{center}
+
+$\to$ using \texttt{problem} solver [\textit{Bott et al.} 2017, JPP] \\
+$\to$ we considered 30 MeV protons for this analysis \\
+
+\end{slide}
+
+
+
+
+% ____________________________________________________________________________
+\begin{slide}
+{\large \textbf{B-field reconstruction using \texttt{problem}}}
+
+\begin{center}
+\includegraphics[width=1.0\textwidth]{problem.png}
+\end{center}
+
+$\to$ weaker B-field in current sheet for 2-plumes \\
+$\to$ we can then compute $\partial_t \phi = \partial_t \int \!\!\! \int B_y \; \D x \D z = 2.5 \pm 0.6$ T.mm$^2$.ns$^{-1}$ \\
+$\to$ frow Faraday law, $\partial_t \phi = \lambda E$ \\
+$\to$ with $\int B_y \; \D z = 13$ T.mm and $V_0 \sim v_A = 400 \pm 130 \times 10^3$ m.s$^{-1}$ \\
+    $\to$ then, the reconnection rate $E^{\prime} = 0.48 \substack{+0.40 \\ -0.20}$ \\
+
+\end{slide}
+
+
+
+% ____________________________________________________________________________
+\begin{slide}
+{\large \textbf{Hybrid-PIC simulation using \texttt{heckle}}}
+
+\begin{center}
+\includegraphics[width=0.8\textwidth]{heckle.png}
+\end{center}
+
+$\to$ the "mouth" opens just before the onset \\
+$\to$ then closes during reconnection \\
+$\to$ and disappears when there is no more B-field \\
+
+\end{slide}
+
+
+
+% ____________________________________________________________________________
+\begin{slide}
+{\large \textbf{Numerical reconnection rate with \texttt{heckle}}}
+
+\begin{center}
+\includegraphics[width=1.0\textwidth]{recrate.png}
+\end{center}
+
+$\to$ smaller reconnection rate with 2 plumes \\
+$\to$ the outflow velocity is clearly inhibited by the closed structure \\
+%$\to$  \\
+
+\end{slide}
+
+
+
+% ____________________________________________________________________________
+\begin{slide}
+{\large \textbf{Importance of the Hall effect for fast reconnection}}
+
+%\begin{center}
+%\includegraphics[width=0.7\textwidth]{scheme.jpg}
+%\end{center}
+\begin{center}
+\input{_hall}
+\end{center}
+
+$\bullet$ (Hall) $E_{XY}$ electric field associated to $J_Z$ and $B_{XY}$ \\[0.3cm]
+$\bullet$ $J_Z$ grows at the tip of each loops when colliding\\
+$\to$ quadrupolar $B_Z$ grows because $E_{XY}$ is no more curl-free\\[0.3cm]
+$\bullet$ $J_{XY}$ associated to this out-of-plane magnetic field\\
+$\to$ carried by electrons because protons are demagnetized
+
+\end{slide}
+
+
+
+% ____________________________________________________________________________
+\begin{slide}
+{\large \textbf{Concluding remarks}}
+
+$\bullet$ Magnetic reconnection operates in both 2-plumes \& 3-plumes cases \\[0.6cm]
+$\bullet$ In the 2-plumes case, $E^{\prime} > 0.48$ \\
+$\to$ first measure (of a lower value) of a reconnection rate \\
+$\to$ balance between creation \& loss rate is coherent with \texttt{fci2} results \\[0.6cm]
+$\bullet$ "Fast reconnection" is slowed down in the 3-plumes case \\
+$\to$ magnetic reconnection is hampered as the outflow is trapped \\
+$\to$ magnetic reconnection is hampered as the Hall B-field is lowered \\
+%$\bullet$  \\
+
+\end{slide}
+
+
+
+% ____________________________________________________________________________
+\begin{slide}
+{\large \textbf{DP1 images}}
+
+\begin{center}
+\begin{tabular}{ccc}
+shot 1 & shot 3 & shot 4 \hspace{2.0cm}\\
+\includegraphics[width=0.14\textwidth]{dp1_1.png} &
+\includegraphics[width=0.14\textwidth]{dp1_2.png} &
+\includegraphics[width=0.14\textwidth]{dp1_3.png} \\
+\end{tabular}
+\end{center}
+
+%$\to$ unfortunately, no clear insights from these spectra...
+
+\end{slide}
+
+
+
+% ____________________________________________________________________________
+\begin{slide}
+{\large \textbf{DMX spectra}}
+
+\begin{center}
+\includegraphics[width=0.8\textwidth]{fig_DMX.png}
+\end{center}
+
+$\to$ unfortunately, no clear insights from these spectra...
+
+\end{slide}
+
+
+
+% ____________________________________________________________________________
+\begin{slide}
+{\large \textbf{B-field pictured by proton-radiography}}
+
+$\bullet$ Proton beam (42 MeV max. energy) produced by TNSA \\
+$\to$ using PETAL on a 25 $\mu$m gold foil
+
+\input{_proton_radio}
+
+$\bullet$ Strong $B$ $\Rightarrow$ before Reconnection : "open mouth" \\
+$\bullet$ Moderate $B$ $\Rightarrow$ during reconnection : "closed mouth" \\
+$\bullet$ no $B$ $\Rightarrow$ after reconnection : nothing ! \\
+
+\end{slide}
+
+
+
+% ____________________________________________________________________________
+\begin{slide}
+{\large \textbf{Synthetic RCF for 10 MeV proton beam}}
+
+\begin{center}
+\includegraphics[width=0.8\textwidth]{rcf2D.png}
+\end{center}
+
+$\to$ a "mouth" open when B field is compressed\\
+$\to$ but closes when reconnection operates (and decrease B)\\
+
+\end{slide}
+
+
+
+\end{document}

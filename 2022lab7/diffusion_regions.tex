@@ -1,0 +1,36 @@
+
+\vspace{1.0cm}
+
+\begin{center}
+\begin{tikzpicture}
+
+\draw[->] (0.0, 0.0) -- (1.0, 0.0) node[right]{$x$} ;
+\draw[->] (0.0, 0.0) -- (0.0, 1.0) node[above]{$y$} ;
+
+\fill[gray!20] (4, 0.31) rectangle (11, 2.68);
+\fill[gray!40] (6, 1.00) rectangle ( 9, 2.00);
+
+\draw [decoration={markings, mark=at position 1.0 with {\arrow[very thick]{>}}},
+       postaction={decorate}] (7.5, 3.0) -- (7.5, 2.4) ;
+
+\draw [decoration={markings, mark=at position 1.0 with {\arrow[very thick]{>}}},
+       postaction={decorate}] (4.5, 1.5) -- (3.0, 1.5) ;
+
+\draw [dashed] (3.0, 0.0) -- (12.0, 3.0) ;
+\draw [dashed] (3.0, 3.0) -- (12.0, 0.0) ;
+
+\draw[->] (6.0, 0.1) -- (9.0, 0.1) ;
+
+\node (A) at (5.7, 3.1) {$\mathrm{ideal \: MHD}$} ;
+\node (B) at (7.8, 2.7) {$U$} ;
+\node (C) at (3.8, 1.7) {$v$} ;
+\node (D) at (1.8, 3.1) {$separatrice$} ;
+\node (E) at (6.2, 0.5) {$\mathrm{p^+ \: diff.}$} ;
+\node (F) at (7.4, 1.2) {$\mathrm{e^- \: diff.}$} ;
+\node (G) at (1.0,-1.5) {$\mathrm{ideal \: MHD} \: : \: \mathbf E = - \mathbf U \times \mathbf B$ \hspace{1.0cm} $d_p < y$} ;
+\node (H) at (1.50,-2.2) {$\mathrm{p^+ \: diff.} \: : \: \mathbf E = (\mathbf J \times \mathbf B)/en$ \hspace{1.3cm} $d_e < y < d_p$} ;
+\node (I) at (1.50,-2.9) {$\mathrm{e^- \: diff.} \: : \: \mathbf E = - (\boldsymbol{\nabla} . \mathbf P_e)/en$ \hspace{2.0cm} $y < d_e$} ;
+
+\end{tikzpicture}
+\end{center}
+

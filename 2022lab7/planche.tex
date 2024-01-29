@@ -1,0 +1,375 @@
+\documentclass[landscape]{slides}
+
+\usepackage{animate}
+\usepackage[landscape]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{pstricks}
+\usepackage{graphicx}
+\usepackage{graphics}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{wasysym}
+\usepackage{pgf, tikz}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{math}
+
+\setlength{\textwidth}{25.0cm}
+\setlength{\textheight}{19.0cm}
+\setlength{\oddsidemargin}{-1.6cm}
+\setlength{\evensidemargin}{-1.6cm}
+\setlength{\topmargin}{-2.4cm}
+
+\begin{document}
+
+% ____________________________________________________________________________
+\begin{slide}
+\thispagestyle{empty}
+
+\begin{center}
+\textbf{\Large Laboratory investigiton of reconnection \\[0.4cm] weakened by a guide field}
+
+\vspace{3.0cm}
+
+\textrm{\large S. Bolanos$^{\star}$, A. Sladkov$^{\dagger}$, \underline{R. SMETS}$^{\dagger}$, J. Fuchs$^{\star}$, et al.}
+\end{center}
+
+\vspace{1.0cm}
+
+$^{\dagger}$LPP, $^{\star}$LULI
+
+\vspace{2.0cm}
+
+\textit{\large "Lab7 meeting", 21 december 2022}
+
+\end{slide}
+
+% ____________________________________________________________________________
+\begin{slide}
+\large{\textbf{2D Magnetic reconnection}}
+
+\input{_sweet}
+
+$\rightarrow$ converts magnetic energy into kinetic energy \\[0.0cm]
+$\bullet$ we rarely observe reconnection, but the consequences...
+
+\end{slide}
+
+% ____________________________________________________________________________
+\begin{slide}
+\large{\textbf{Fast Reconnection \& Hall effect} [Birn et al., JGR 2001]}
+
+\input{_hall}
+
+\begin{tabular}{lcl}
+Ideal MHD & : & $\mathbf E = - \mathbf U \times \mathbf B$ \\[0.4cm]
+$p^+$ Diff. region & : & $\mathbf E = (\mathbf J \times \mathbf B) / en$ \\[0.4cm]
+$e^-$ Diff. region & : & $\mathbf E = - \boldsymbol{\nabla} . \; \mathbf P_e / en$
+\end{tabular}
+
+\end{slide}
+
+% ____________________________________________________________________________
+\begin{slide}
+\large{\textbf{Planetary Magnetospheres} [Dungey, PRL 1961]}
+
+\input{_magnetosphere}
+
+At day-side Magnetopause \& in the Magnetotail\\
+$\rightarrow$ $\beta \sim 1$, $L \rightarrow \infty$, $\gamma \sim 1$
+
+\end{slide}
+
+% ____________________________________________________________________________
+\begin{slide}
+\large{\textbf{Solar prominence merging} [Aulanier et al., ApJ 2005]}
+
+\input{_flare}
+
+Cold dense tube in hot tenuous coronna, highly 3D\\
+$\rightarrow$ $\beta \sim 10^{-2}$, $L \rightarrow \infty$, $\gamma \sim 1$
+
+\end{slide}
+
+% ____________________________________________________________________________
+\begin{slide}
+\large{\textbf{Striped pulsar wind} [Bogovalov, A\&A 1999]}
+
+\input{_pulsar}
+
+Shock-driven reconnection in a pair-plasmas\\
+$\rightarrow$ $\sigma \sim 10^4$, $L \rightarrow \infty$, $\gamma \sim 10^3$\\
+$\rightarrow$ EM energy to synchrotron emmitting electrons (X \& $\gamma$)
+
+\end{slide}
+
+% ____________________________________________________________________________
+\begin{slide}
+\large{\textbf{Microquasar} [de Gouveia dal Pino \& Lazarian, A\&A 2005]}
+
+\input{_disk} % magneto-centrifugal acceleration
+
+Can explain the steep power-law state of photons\\
+$\rightarrow$ $\beta \leq 1$, $L \rightarrow \infty$, $\gamma \gg 1$\\
+
+\end{slide}
+
+%%% % ____________________________________________________________________________
+%%% \begin{slide}
+%%% \large{\textbf{$\boldsymbol{\gamma}$ ray bursts (Fireball model) } [Thompson, 1994]}
+%%% 
+%%% \input{_fireball} % compact merger or collapsar
+%%% 
+%%% Ultra-relativistic with $\beta \leq 10^{-4}$ $\rightarrow$ $f(\gamma) \propto \gamma^{-\delta}$ with $p \sim -2.2$\\
+%%% $\rightarrow$ Associated $\delta \sim -1.6$ for synchrotron photons
+%%% 
+%%% \end{slide}
+
+% ____________________________________________________________________________
+\begin{slide}
+\large{\textbf{With high-intensity Lasers...} [Nielson et al., 2006]}
+
+\input{_planar}
+
+$\bullet$ Two closeby hotspots on solid target :\\
+$\rightarrow$ 2 magnetic loops created by Biermann-Battery effect\\
+$\rightarrow$ newly created magnetic flux expeled by reconnection
+
+\end{slide}
+
+% ____________________________________________________________________________
+\begin{slide}
+\large{\textbf{Importance of Hall effect for fast reconnection}}
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{scheme.jpg}
+\end{center}
+
+$\bullet$ (Hall) $E_{XY}$ electric field associated to $J_Z$ and $B_{XY}$\\
+$\bullet$ $J_Z$ grows at the tip of each loops when colliding\\
+$\rightarrow$ quadrupolar $B_Z$ grows because $E_{XY}$ is no more curl-free\\
+$\bullet$ $J_{XY}$ associated to this out-of-plane magnetic field\\
+$\rightarrow$ carried by electrons because protons are demagnetized
+
+\end{slide}
+
+% ____________________________________________________________________________
+\begin{slide}
+\large{\textbf{When folding targtets} [Smets et al., 2014]}
+
+\input{_quadru}
+
+$\bullet$ Initial quadripolar out-of-plane magnetic field\\
+$\rightarrow$ reconnection rate depends on sallient/reverse angle\\
+$\rightarrow$ experiment (to be published) at LULI2000 in 2015
+
+\end{slide}
+
+% ____________________________________________________________________________
+\begin{slide}
+\large{\textbf{Non-Coplanar Hybrid simulation : t=0}}
+
+\begin{center}
+\includegraphics[width=0.6\textwidth]{bz0.jpg}
+\end{center}
+
+\end{slide}
+
+% ____________________________________________________________________________
+\begin{slide}
+\large{\textbf{Non-Coplanar Hybrid simulation : t=16}}
+
+\begin{center}
+\includegraphics[width=0.6\textwidth]{bz16.jpg}
+\end{center}
+
+\end{slide}
+
+% ____________________________________________________________________________
+\begin{slide}
+\large{\textbf{Main result of} [Smets et al., 2014]}
+
+$\bullet$ A quadrupolar B field develops in thin \& compressed current sheet\\
+$\bullet$ These are also the condition to trigger magnetic reconnection\\
+$\rightarrow$ hence quadrupolar B field develops \underline{before} reconnection
+
+$\bullet$ The quadrupolar B field is not a consequence of reconnection\\
+$\rightarrow$ neither a cause... but "concomitant" with reconnection\\
+
+
+\end{slide}
+
+%%% % ____________________________________________________________________________
+%%% \begin{slide}
+%%% \large{\textbf{Reconnected flux}}
+%%% 
+%%% \begin{center}
+%%% \includegraphics[width=0.8\textwidth]{phi01f.jpg}
+%%% \end{center}
+%%% 
+%%% $B_Z$ develops prior the reconnection onset (t=16)\\
+%%% Same reconnection rate at each loci (slope of $A_Z$)\\
+%%% Time lag between the 2 onsets of reconnection
+%%% 
+%%% \end{slide}
+
+%%% % ____________________________________________________________________________
+%%% \begin{slide}
+%%% \large{\textbf{LULI 2000 : 2 beams with 200 J \& 4.0 ns each}}
+%%% 
+%%% \begin{center}
+%%% \includegraphics[width=0.9\textwidth]{Au-plane.png}
+%%% \end{center}
+%%% 
+%%% $\rightarrow$ The 2 magnetic shells get compressed and get flat\\
+%%% $\rightarrow$ On the reconnection sheet, protons are weakly scattered
+%%% 
+%%% \end{slide}
+
+%%% % ____________________________________________________________________________
+%%% \begin{slide}
+%%% \large{\textbf{LULI 2000 : 2 beams with 200 J \& 4.0 ns each}}
+%%% 
+%%% \begin{center}
+%%% \includegraphics[width=0.9\textwidth]{Au-anti.png}
+%%% \end{center}
+%%% 
+%%% $\rightarrow$ No more flat sheet betweens the 2 shells\\
+%%% $\rightarrow$ Reconnection inhibited ?
+%%% 
+%%% \end{slide}
+
+% ____________________________________________________________________________
+\begin{slide}
+\large{\textbf{With a different folding}}
+
+\input{_guide}
+
+$\bullet$ Initial non-uniform Guide-field\\
+$\rightarrow$ generally slows-down the (symmetrical) reconnection
+
+\end{slide}
+
+%%% % ____________________________________________________________________________
+%%% \begin{slide}
+%%% \large{\textbf{LMJ/PETAL shots end of 2017}}
+%%% 
+%%% $\bullet$ 800 kJ, 4 ns with 4 quads\\[0.4cm]
+%%% $\bullet$ Increase magnetization \& shorten reconnection process\\[0.4cm]
+%%% $\bullet$ High Z target decreases the associated $\beta$ value\\[0.4cm]
+%%% $\bullet$ Proton radiography\\
+%%% $\rightarrow$ Get (integrated) $E$ \& $B$ fields at different times\\[0.4cm]
+%%% $\bullet$ DP1 X-ray imager : 12 images with resolution of 130 ps\\
+%%% $\rightarrow$ a sequence of 2D images\\[0.4cm]
+%%% $\bullet$ DMX Spectrometer : X-rays spectra resolved in time\\
+%%% $\rightarrow$ measure the black-body spectrum of $T \sim$ 100 eV plasma
+%%% 
+%%% \end{slide}
+
+% ____________________________________________________________________________
+\begin{slide}
+\large{\textbf{Experimental setup at LULI 2000 (in 2017)}}
+
+\begin{center}
+\includegraphics[width=1.0\textwidth]{manip.png}
+\end{center}
+
+\end{slide}
+
+% ____________________________________________________________________________
+\begin{slide}
+\large{\textbf{Hybrid-PIC simulation for simplified 2D case}}
+
+\begin{center}
+\includegraphics[width=0.8\textwidth]{simu2D.png}
+\end{center}
+
+\end{slide}
+
+% ____________________________________________________________________________
+\begin{slide}
+\large{\textbf{Synthetic RCF for 10 MeV proton beam}}
+
+\begin{center}
+\includegraphics[width=0.8\textwidth]{rcf2D.png}
+\end{center}
+
+$\rightarrow$ a "mouth" open when B field is compressed\\
+$\rightarrow$ but closes when recnnection operate (and decrease B)\\
+
+\end{slide}
+
+% ____________________________________________________________________________
+\begin{slide}
+\large{\textbf{Synthetic RCF for 10 MeV proton beam}}
+
+\begin{center}
+\includegraphics[width=0.6\textwidth]{crados.png}
+\end{center}
+
+$\rightarrow$ for coplanar reconnection, no magnetic field pile-up : magnetic flux is expelled by reconnection\\
+$\rightarrow$ "guided" reconnection is triggering later and/or at a smaller rate\\
+
+\end{slide}
+
+% ____________________________________________________________________________
+\begin{slide}
+\large{\textbf{Streaked Optical Pyrometry}}
+
+\begin{center}
+\includegraphics[width=0.36\textwidth]{fig2_vSOP_v5}
+\end{center}
+
+$\rightarrow$ emissivity increases with density because of the pile-up\\
+$\rightarrow$ emissivity decreases for hot plasma
+
+\end{slide}
+
+
+% ____________________________________________________________________________
+\begin{slide}
+\large{\textbf{3D Hybrid-PIC simulations : "heated" and "feeded"}}
+
+% $\bullet$ Including an (electron) heating and (ion) feeding operator
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{fig4}
+\end{center}
+
+%$\rightarrow$ the "in-plane" magnetic field is almost the same\\
+%$\rightarrow$ the plasma weakly depends on the axial coordinate
+
+\end{slide}
+
+
+% ____________________________________________________________________________
+\begin{slide}
+\large{\textbf{Energy dissipation and electron heating}}
+
+\begin{center}
+\includegraphics[width=0.5\textwidth]{je_te}
+\end{center}
+
+$\rightarrow$ smaller energy dissipation for larger angles\\
+$\rightarrow$ and also less efficient heating of the electrons
+
+\end{slide}
+
+% ____________________________________________________________________________
+\begin{slide}
+    \large{\textbf{Concluding remarks} : [Bolanos et al., Nat. Comm., 2022]}
+
+$\bullet$ Magnetic reconnection becomes less efficient when increasing the tilt angle between two flux-tubes\\
+$\bullet$ Experiment point that when increasing the angle between the two targets :\\
+-- enhancement of the magnetic compression\\
+-- larger electron density\\
+-- smaller electron temperature in the current sheet
+
+$\bullet$ 3D hybrid-PIC simulations concur with the observations\\
+$\rightarrow$ drop of efficiency of the reconnection process
+
+\end{slide}
+
+\end{document}

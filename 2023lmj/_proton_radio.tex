@@ -1,0 +1,82 @@
+\begin{tikzpicture}[scale=0.5]
+
+\definecolor{mycolor}{rgb}{0,0.6,0.5}
+
+\def\asympL{+2.8}
+\def\asympM{+1.8}
+\def\shiftone{+7.0}
+
+\tikzset{declare function={trajL(\x)=(-0.4*\x-4)+\asympL/(\x-1);}}
+\tikzset{declare function={trajM(\x)=(-2.0*\x-4)+\asympM/(\x-1);}}
+\tikzset{declare function={chameau(\x)=-4.4+exp(-5.0*(\x-2)*(\x-2))+exp(-5.0*(\x-0)*(\x-0));}}
+\tikzset{declare function={dromadaire(\x)=+1.4+exp(-2.0*(\x-1)*(\x-1));}}
+
+\node at (-7.0 ,2.0) {Strong $B$};
+
+\draw [domain=-1.5:+0.5, ultra thick, olive, <-] plot({trajL(\x)}, \x);
+\draw [domain=-1.5:+0.5, ultra thick, brown, <-] plot({trajL(\x)}, (-1.5-\x);
+
+\draw[very thick] (-7.0,-0.3) circle (6pt);
+\draw[very thick] (-7.0,-0.3) circle (1pt);
+\draw[very thick] (-7.0, 0.5) circle (6pt);
+\draw[very thick] (-7.0, 0.5) circle (1pt);
+
+\draw[very thick] (-7.0,-1.2) circle (6pt);
+\draw[very thick] (-7.2,-1.2) -- (-6.8,-1.2);
+\draw[very thick] (-7.0,-1.4) -- (-7.0,-1.0);
+\draw[very thick] (-7.0,-2.0) circle (6pt);
+\draw[very thick] (-7.2,-2.0) -- (-6.8,-2.0);
+\draw[very thick] (-7.0,-2.2) -- (-7.0,-1.8);
+
+\draw[dotted, very thick] (-4.4,-3.0) -- (-4.4,+1.0);
+
+\node at (-4.4,-3.4) {{\small RCF}};
+
+\draw[fill=black!40, very thick] ( -4.4, -1.8) -- (-4.4, -1.2) -- (-4.0, -1.2) -- (-4.0, -1.8) -- cycle;
+\draw[fill=black!40, very thick] ( -4.4, -0.4) -- (-4.4, +0.2) -- (-4.0, +0.2) -- (-4.0, -0.4) -- cycle;
+
+%\draw [domain=-3.0:+3.0, line width=0.1cm, cyan] plot(\x, {\exp(-\x)});
+%\addplot {\gauss(1,0.75)};
+%\draw[cyan] plot[id=f7,domain=-4.25:4.25,samples=100] function {10*exp(-x*x/2)};
+%\filldraw [fill=red] plot[id=f6,domain=-20:30] function {exp(-x*x/2)} -- (3,0)  -- (2,0) -- cycle;
+%\filldraw [domain=-2.0:+3.0, rotate=-90, olive] plot(\x, {chameau(\x)});
+
+
+
+\node at ( 1.0 ,2.0) {Moderate $B$};
+
+\draw [domain=-0.9:+0.5, ultra thick, olive, <-] plot({\shiftone+trajM(\x)}, \x);
+\draw [domain=-0.9:+0.5, ultra thick, brown, <-] plot({\shiftone+trajM(\x)}, (-1.5-\x);
+
+\draw[very thick] ( 1.0,-0.3) circle (6pt);
+\draw[very thick] ( 1.0,-0.3) circle (1pt);
+\draw[very thick] ( 1.0, 0.5) circle (6pt);
+\draw[very thick] ( 1.0, 0.5) circle (1pt);
+
+\draw[very thick] ( 1.0,-1.2) circle (6pt);
+\draw[very thick] ( 0.8,-1.2) -- ( 1.2,-1.2);
+\draw[very thick] ( 1.0,-1.4) -- ( 1.0,-1.0);
+\draw[very thick] ( 1.0,-2.0) circle (6pt);
+\draw[very thick] ( 0.8,-2.0) -- ( 1.2,-2.0);
+\draw[very thick] ( 1.0,-2.2) -- ( 1.0,-1.8);
+
+\draw[dotted, very thick] (+4.0,-3.0) -- (+4.0,+1.0);
+
+\node at ( 4.0,-3.4) {{\small RCF}};
+
+\draw[fill=black!40, very thick] (4.0, -1.2) -- (4.0, -0.4) -- (4.4, -0.4) -- (4.4, -1.2) -- cycle;
+
+%\filldraw [domain=-3.0:+3.0, rotate=-90, olive] plot(\x, {dromadaire(\x)});
+
+
+
+\node at ( 10.0 ,2.0) {no $B$};
+
+\draw [domain=+7.0:+12.0, ultra thick, olive, ->] plot(\x, +0.0);
+\draw [domain=+7.0:+12.0, ultra thick, brown, ->] plot(\x, -2.0);
+
+\draw[dotted, very thick] (+12.0,-3.0) -- (+12.0,+1.0);
+
+\node at ( 12.0,-3.4) {{\small RCF}};
+
+\end{tikzpicture}
