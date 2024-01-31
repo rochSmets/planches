@@ -1,0 +1,41 @@
+\begin{tikzpicture}
+\begin{scope}[x={(30mm,0mm)},y={({cos(40)*18mm},{sin(40)*18mm})}, z={({cos(90)*10mm},{sin(90)*10mm})},line join=round,fill opacity=0.3]
+
+\draw[fill=black!00] ( 0, 0, -0.2) -- ( 0, 0,  0.2) -- ( 0, 1,  0.2) -- ( 0, 1, -0.2) -- cycle;
+\draw[fill=black!00] ( 0, 0, -0.2) -- ( 1, 0, -0.2) -- ( 1, 1, -0.2) -- ( 0, 1, -0.2) -- cycle;
+\draw[fill=black!00] ( 0, 1, -0.2) -- ( 1, 1, -0.2) -- ( 1, 1,  0.2) -- ( 0, 1,  0.2) -- cycle;
+\draw[fill=black!80] ( 1, 0, -0.2) -- ( 1, 0,  0.2) -- ( 1, 1,  0.2) -- ( 1, 1, -0.2) -- cycle;
+\draw[fill=black!00] ( 0, 0,  0.2) -- ( 1, 0,  0.2) -- ( 1, 1,  0.2) -- ( 0, 1,  0.2) -- cycle;
+\draw[fill=black!80] ( 0, 0, -0.2) -- ( 1, 0, -0.2) -- ( 1, 0,  0.2) -- ( 0, 0,  0.2) -- cycle;
+
+\draw[fill=black!20] ( 0.5, 0, 0) -- ( 0.5, 0, 1) -- ( 0.5, 1, 1) -- ( 0.5, 1, 0) -- cycle;
+
+\draw[dotted] ( 0, 0, 0) -- ( 1, 0, 0);
+\draw[dotted] ( 0, 1, 0) -- ( 1, 1, 0);
+
+\draw[thin, |-|] (0.5,0,1.2) -- (0.5,1,1.2);
+\node[text=black, opacity=1] at (0.65,0,1.9) {$\Lambda$};
+
+\draw[thin, |-|] (1.04,1,-0.2) -- (1.04,1,0.2);
+\node[text=black, opacity=1] at (1.1,1.0,0.1) {$\delta$};
+
+\draw[thin, |-|] (0.54, 1.0, 0.0) -- (0.54, 1.0, 1.0);
+\node[text=black, opacity=1] at (0.64, 1.0, 0.5) {$\Delta y$};
+
+\draw ( 0, 0, -0.2) to node[currarrow            , thick] {} ( 1, 0, -0.2);
+\draw ( 0, 0, -0.6) to node[currarrow            , thick] {} ( 1, 0, -0.6);
+\draw ( 1, 0,  0.2) to node[currarrow, rotate=180, thick] {} ( 0, 0,  0.2);
+\draw ( 1, 0,  0.6) to node[currarrow, rotate=180, thick] {} ( 0, 0,  0.6);
+
+\draw[thin, ->] (1.4, 0.0, 0.0) -- (1.6, 0.0, 0.0);
+\node[text=black, opacity=1] at (1.64,0,0) {$x$};
+
+\draw[thin, ->] (1.4, 0.0, 0.0) -- (1.4, 0.0, 0.6);
+\node[text=black, opacity=1] at (1.48,0,0.6) {$y$};
+
+\draw[thin, ->] (1.4, 0.0, 0.0) -- (1.4, -0.3, 0.0);
+\node[text=black, opacity=1] at (1.4,-0.38,0) {$z$};
+
+
+\end{scope}
+\end{tikzpicture}
