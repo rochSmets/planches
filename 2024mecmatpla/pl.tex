@@ -36,6 +36,23 @@
 
 % ____________________________________________________________________________
 \begin{frame}
+\frametitle{Magnetic reconnection : definition \& properties}
+
+$\bullet$ Magnetic reconnection (MR) occurs in electrically conducting plasma where : \\[0.2cm]
+--- magnetic topology of the magnetic field lines is rearranged \\
+--- magnetic energy is converted in particle energy (both thermal and flow energy) \\[0.4cm]
+
+$\to$ MR can disconnect formerly connected magnetic fields like in the solar photosphere (\textsc{giovanelli1947})\\[0.2cm]
+$\to$ MR can connect formerly disconnected magnetic fields like in stellar wind-magnetosphere interaction (\textsc{dungey1961}) \\[0.4cm]
+
+$\bullet$ MR important for transport across magnetic boundaries \& energetization 
+
+\end{frame}
+
+
+
+% ____________________________________________________________________________
+\begin{frame}
 \frametitle{Magnetic reconnection in solar arches}
 
 3D (revised) \underline{standard model} [\textit{Holman} 2016, JGR] : \\[0.4cm]
@@ -110,11 +127,12 @@ $\to$ could be a PeVatron for cosmic rays, black-hole jets... \\
 \begin{frame}
 \frametitle{Big picture of 2D magnetic reconnection}
 
+$\bullet$ Ohm's law : $\displaystyle \mathbf E = - \mathbf V_i \times \mathbf B - \frac{1}{en} [\mathbf j \times \mathbf B - \boldsymbol{\nabla} . \; \mathbf p_e] + \eta \mathbf j - \eta^{\prime} \Delta \mathbf j + m_e \D _t \mathbf j$ \\[0.2cm]
+
 \begin{center}
 \input{_reconnection_diffusions}
 \end{center}
 
-$\bullet$ Ohm's law : $\displaystyle \mathbf E = - \mathbf V_i \times \mathbf B - \frac{1}{en} [\mathbf j \times \mathbf B - \boldsymbol{\nabla} . \; \mathbf p_e] + \eta \mathbf j - \eta^{\prime} \Delta \mathbf j + m_e \D _t \mathbf j$ \\[0.2cm]
 $\bullet$ Efficiency  of reconnection measured by $E_z^{\prime} = E_z/B_0 v_A$ \\[0.1cm]
 $\to$ Ideal term in the MHD region \\
 $\to$ Hall term in the Ion diffusion region \\
@@ -136,6 +154,55 @@ $\bullet$ X line formation: local spreading in a global context? \\[0.3cm]
 $\bullet$ What controls their length? \\[0.3cm]
 $\bullet$ How do they respond to the temporal variations of external conditions? \\[0.3cm]
 $\bullet$ What are the respective roles of large scale inhomogeneities and local kinetic effects? \\[0.3cm]
+
+\end{frame}
+
+
+
+% ____________________________________________________________________________
+\begin{frame}
+\frametitle{Collisional vs collisionless tearing}
+
+$\bullet$ A current sheet is intrinsically unstable to tearing
+
+\begin{center}
+\input{_tearing}
+\end{center}
+
+$\bullet$ Magnetic reconnection triggers with a dissipation mechanism: \\[0.4cm]
+$\to$ Coulomb collisions [\textit{Furth et al.} 1963, Phys. Fluids] \\
+$\to$ Particle-wave resonant process [\textit{Coppi et al.} 1966, PRL]
+
+
+\end{frame}
+
+
+
+% ____________________________________________________________________________
+\begin{frame}
+\frametitle{Characteristic scales for magnetic reconnection}
+
+    $\bullet$ Collisional tearing : $\displaystyle \gamma = \frac{(\Delta^{\prime} L)^{4/5}}{\tau_R} S^{2/5}$ with $S = \frac{L v_A}{\eta}$ \\
+
+$\to$ $S \gg 1$, $L \gg \lambda_{CS}$ collisional reconnection \& $\tau_R \ll \tau_A$ \\
+    $\to$ $E^{\prime}  = S^{-1/2} \lesssim 0.01$ for "fast" high-$S$ reconnection \\
+
+\bigskip
+
+$\bullet$ Collisionless tearing : $\displaystyle \gamma = \frac{1}{\sqrt{\pi}} (1 - k^2\lambda_{CS}^2) \frac{d_e^2}{\lambda_{CS}^2} \frac{v_{Te}}{\sqrt{\rho_e \lambda_{CS}}} $ \\
+
+$\to$ $\lambda_{CS} \sim d_p$, $\rho_e \sim d_e$ so $\gamma$ is a fraction of $\Omega_p$ \\
+$\to$ $E^{\prime} \sim 0.1$ for fast reconnection mediated by Hall effect \\
+
+\bigskip
+
+$\bullet$ Hall-MHD, hybrid-PIC \& full-PIC simulations \\
+$\to$ growth on $\Omega_p t \sim 20$ [\textit{Birn et al.}, 2001, J. Geophys. Res.] \\
+
+\bigskip
+
+%%% $\Rightarrow$ $\lambda_{CS} \sim d_p$ over a length $L > 20 d_p$ \\[0.2cm]
+$\bullet$ $\Omega_p \sim 10$ ps for $B = 10^3$ T and $d_p \sim 2 \mu$m for $n_e = 10^{28}$ m$^{-3}$ \\
 
 \end{frame}
 
@@ -172,7 +239,7 @@ $\bullet$ Distance between the 2 focal spots $\geq$ twice the plume radii
 \end{center}
 
 $\bullet$ The current sheet is building up during the irradiation \\
-$\bullet$ Lundqvist number $S \sim 10^3$ (with Spitzer-Harm resistivity) \\
+$\bullet$ Lundqvist number $S \sim 10^3$ (with Spitzer-H\"arm resistivity) \\
 $\to$ aspect ratio of the current sheet $L/\delta < $ 50 \\
 $\to$ we then are \underline{not in the plasmoid regime} \\
 $\bullet$ Curvature of the B-field in favour of single X-type reconnection \\
@@ -358,6 +425,8 @@ $\to$ but closes when reconnection operates (and decrease B)\\
 \begin{frame}
 \frametitle{B-field reconstruction using \texttt{problem} solver}
 
+see [\textit{Bott et al.,} 2017, J. Plasma Phys.] (open source on GitHub)
+
 $\bullet$ Maxwell-Faraday : relation between magnetic flux $\partial_t \phi$ and $E$ \\
 
 \begin{center}
@@ -418,55 +487,6 @@ $\to$ with 3 Plumes, smaller reconnection rate whcih make $j_z$ grows \\
 
 $\rightarrow$ Emissivity increases with density because of the pile-up\\
 $\rightarrow$ Emissivity decreases for hot plasma
-
-\end{frame}
-
-
-
-% ____________________________________________________________________________
-\begin{frame}
-\frametitle{Collisional vs collisionless tearing}
-
-$\bullet$ A current sheet is intrinsically unstable to tearing
-
-\begin{center}
-\input{_tearing}
-\end{center}
-
-$\bullet$ Magnetic reconnection triggers with a dissipation mechanism: \\[0.4cm]
-$\to$ Coulomb collisions [\textit{Furth et al.} 1963, Phys. Fluids] \\
-$\to$ Particle-wave resonant process [\textit{Coppi et al.} 1966, PRL]
-
-
-\end{frame}
-
-
-
-% ____________________________________________________________________________
-\begin{frame}
-\frametitle{Characteristic scales for magnetic reconnection}
-
-$\bullet$ Collisional tearing : $\displaystyle \gamma = \frac{(\Delta^{\prime} L)^{4/5}}{\tau_R} S^{2/5}$ \\
-
-$\to$ $S \gg 1$, $L \gg \lambda_{CS}$ collisional reconnection \& $\tau_R \ll \tau_A$ \\
-$\to$ $E^{\prime} \lesssim 0.01$ for "fast" high-$S$ reconnection \\
-
-\bigskip
-
-$\bullet$ Collisionless tearing : $\displaystyle \gamma = \frac{1}{\sqrt{\pi}} (1 - k^2\lambda_{CS}^2) \frac{d_e^2}{\lambda_{CS}^2} \frac{v_{Te}}{\sqrt{\rho_e \lambda_{CS}}} $ \\
-
-$\to$ $\lambda_{CS} \sim d_p$, $\rho_e \sim d_e$ so $\gamma$ is a fraction of $\Omega_p$ \\
-$\to$ $E^{\prime} \sim 0.1$ for fast reconnection mediated by Hall effect \\
-
-\bigskip
-
-$\bullet$ Hall-MHD, hybrid-PIC \& full-PIC simulations \\
-$\to$ growth on $\Omega_p t \sim 20$ [\textit{Birn et al.}, 2001, J. Geophys. Res.] \\
-
-\bigskip
-
-%%% $\Rightarrow$ $\lambda_{CS} \sim d_p$ over a length $L > 20 d_p$ \\[0.2cm]
-$\bullet$ $\Omega_p \sim 10$ ps for $B = 10^3$ T and $d_p \sim 2 \mu$m for $n_e = 10^{28}$ m$^{-3}$ \\
 
 \end{frame}
 
@@ -608,6 +628,44 @@ $\to$ pair plasma of interest in compact objects... \\
 \frametitle{}
 
 {\usebeamercolor[fg]{title} {\LARGE Additional material,}}
+
+\end{frame}
+
+
+
+% ____________________________________________________________________________
+\begin{frame}
+\frametitle{Sweet-Parker regime}
+
+$\bullet$ Upstream : frozen-in theorem $\to$ ideal Ohm's law $E_z = U B_0$ \\[0.2cm]
+$\bullet$ Diffusion region (collisional) i$\to$ $J_z = \sigma E_z$ \\
+
+\begin{center}
+\input{SP}
+\end{center}
+
+$L \ll \delta$ : elongated current sheet \& $E^{\prime} = S^{1/2}$ \\[0.2cm]
+$S \sim 10^8$ in solar flares... hence reconnection is very slow !
+
+\end{frame}
+
+
+
+
+% ____________________________________________________________________________
+\begin{frame}
+\frametitle{Plasmoid regime}
+
+$\bullet$ For $S > S_{\mathrm{critical}} \sim 10^4$, elongated SP layers are unstable to secondary magnetic islands (\textsc{matthaeus1985}) \\
+
+\begin{center}
+\input{Plasmoids}
+\end{center}
+
+1 --- linear collisional tearing (\textsc{furth1963} + \textsc{rutherford1973}) \\[0.2cm]
+2 --- X-point collapse in a SP elongated current sheet \\[0.2cm]
+3 --- $L$ grows until $L \gtrsim 50 \delta$, that is $S \gtrsim S_{\mathrm{crit}} \equiv 10^4$ \\[0.2cm]
+4 --- collapse \& creation of secondary islands (w. smaller $\delta$)...
 
 \end{frame}
 
